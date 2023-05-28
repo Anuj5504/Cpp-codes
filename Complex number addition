@@ -45,3 +45,15 @@ int main()
    s.display();
     return 0;
 }
+
+/* output----->Complex number
+               23 + 34i
+               Complex number
+               21 + 6i
+               Addition of two complex numbers
+               44 + 40i
+*/               
+
+
+
+
