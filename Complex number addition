@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+
+class complex{
+    int a,b;
+    public:
+    friend complex add(complex o1,complex o2);
+     void setno(int x, int y)    /*set given number as a and b resp*/
+     {
+        a=x;
+        b=y;
+     }
+     void display(void)//Display complex number
+     {
+         
+         cout<<a<<" + "<<b<<"i"<<endl;
+         
+     }
+     
+};
+
+complex add(complex o1,complex  o2)   /*Creating a function having return type complex*/
+{
+    complex o3;
+    o3.setno((o1.a + o2.a),(o1.b +o2.b)); 
+    return o3;
+}
+
+int main()
+{
+   complex c1,c2,s;
+   
+   c1.setno(23,34);
+   cout<<"Complex number"<<endl;
+   c1.display();
+   
+   c2.setno(21,6);
+   cout<<"Complex number"<<endl;
+   c2.display();
+   s=add(c1,c2);
+   
+   cout<<"Addition of two complex numbers"<<endl;
+   s.display();
+    return 0;
+}
