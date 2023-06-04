@@ -1,0 +1,50 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+class coordinates{
+    int a,b;
+    public:
+    friend void distance(coordinates w,coordinates z);
+     coordinates (int x,int y) //Constructor(parameterized declaration and definition
+     {
+         a=x;
+         b=y;
+     }
+     void display()
+     {
+         cout<<"( "<<a<<","<<b<<" )"<<endl;
+     }
+};
+
+void distance(coordinates p,coordinates q) //Friend function which calculates distance between two points.
+{
+    float d,t1,t2;
+    t1=p.a-q.a;
+    t1=pow(t1,2);
+    t2=p.b-q.b;
+    t2=pow(t2,2);
+    d=sqrt(t1+t2);
+    cout<<"Distance is between two points "<<endl<<d;
+    
+}
+
+int main(){
+    coordinates p(5,6),q(3,4); 
+    cout<<"YOUR FIRST COORDINATES ARE "<<endl;
+    p.display();
+    cout<<"YOUR SECOND COORDINATES ARE "<<endl;
+    q.display();
+    distance(p,q);
+    return 0;
+}
+
+/*OUTPUT--------->    
+     YOUR FIRST COORDINATES ARE 
+     ( 5,6 )
+     YOUR SECOND COORDINATES ARE 
+     ( 3,4 )
+     Distance is between two points 
+     2.82843
+*/
